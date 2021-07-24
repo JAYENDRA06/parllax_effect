@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax_effect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="text">
+            <h2>Hello World , I Am</h2>
+            <h1>Jayendra Awasthi</h1>
+        </div>
+        <img src="Frame1.svg" alt="" class="frames frame1" id="frame1">
+        <img src="Frame2.svg" alt="" class="frames frame2" id="frame2">
+        <img src="Frame3.svg" alt="" class="frames frame3" id="frame3">
+        <img src="Frame4.svg" alt="" class="frames frame4" id="frame4">
+        <img src="Frame5.svg" alt="" class="frames frame5" id="frame5">
+
+    </div>
+    <div class="test"></div>
+
+    <script>
+        let frame1= document.getElementById("frame1");
+        let frame2= document.getElementById("frame2");
+        let frame3= document.getElementById("frame3");
+        let frame4= document.getElementById("frame4");
+        let frame5= document.getElementById("frame5");
+        let container=document.getElementById("container");
+
+        window.addEventListener('scroll',function(){
+            var value = window.scrollY;
+
+            frame1.style.left = (value * 0.3 -200) +'px';
+            frame2.style.left = -value * 0.5 +'px';
+            frame3.style.left = -value * 0.1 +'px';
+            frame4.style.bottom = (value * 0.08 -60) +'px';
+            frame5.style.bottom = -value * 1.2 +'px';
+
+            container.style.opacity= 1-(0.002*value);
+            
+        })
+    </script>
+</body>
+
+</html>
